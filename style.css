@@ -31,6 +31,7 @@
 body.active {
   --text-color: #fff;
   --bg-color: #1f1b27;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 body {
@@ -224,7 +225,7 @@ section {
       }
       .hero-image {
         order: initial;
-      }          */
+      }          
 }
 
 @media (max-width: 340px) {
@@ -431,7 +432,7 @@ header.shadow {
 .label {
   width: 37.5px;
   height: 20px;
-  background-color: #24d7f7;
+  background-color: #61faff;
   display: flex;
   border-radius: 37.5px;
   align-items: center;
@@ -447,21 +448,21 @@ header.shadow {
   height: 16px;
   background-color: #525252;
   position: absolute;
-  margin-top: 2px;
-  margin-bottom: 2px;
-  left: 1.5px;
+  top: 50%;
+  transform: translateY(-50%);
   border-radius: 50%;
   transition: transform 0.2s linear;
+  left: 4px;
 }
 
-/*  target the elemenent after the label*/
-.checkbox:checked+.label .ball {
-  transform: translateX(18px);
+/* When checkbox is checked */
+.checkbox:checked + .label .ball {
+  transform: translateX(18px) translateY(-50%);
   background-color: #e2ded0;
 }
 
-.checkbox:checked+.label {
-  background-color: #20dd40;
+.checkbox:checked + .label {
+  background-color: #686565;
 }
 
 .bxs-moon {
@@ -473,6 +474,8 @@ header.shadow {
   color: yellow;
   scale: 0.75;
 }
+
+
 
 /*skill section*/
 .skill-container {
@@ -700,4 +703,24 @@ header .navbar li {
 .gorsel-container img:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Social Media Links */
+.social-links ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.social-links ul li a {
+  font-size: 24px;
+  color: #333; /* İkon rengini buradan değiştirebilirsiniz */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-links ul li a:hover {
+  color: #24d7f7; /* Hoverda ikon rengini değiştirmek için */
 }
